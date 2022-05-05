@@ -32,6 +32,4 @@ print("get at physical", grid.get_at_physical(grid_test, 200, 150))
 print("value @", grid_test.get_buffer()[200][150])
 # ******* circle test ended **********
 
-# print(phantom[125][340])
-# print(val)
 
