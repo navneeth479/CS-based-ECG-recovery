@@ -32,12 +32,11 @@ class Grid:
 
     def index_to_physical(self, i, j):
         origin = Grid.get_origin(self)
-        return np.array([i * self.spacing + origin[0], j * self.spacing + origin[1]])
+        return np.array([(i * self.spacing) + origin[0], (j * self.spacing) + origin[1]])
 
     def physical_to_index(self, x, y):
-        origin = Grid.get_origin(self)
-        return np.array([((x - origin[0]) / self.spacing).astype('int64'),
-                         ((y - origin[1]) / self.spacing).astype('int64')])
+        return np.array([((x - Grid.o_pixel[0]) / self.spacing).astype('int64'),
+                         ((y - Grid.o_pixel[1]) / self.spacing).astype('int64')])
 
     def set_at_index(self, i, j, val):
         if i >= Grid.get_size(self)[0] or j >= Grid.get_size(self)[1]:
