@@ -9,12 +9,16 @@ class Grid:
         self.height = height
         self.width = width
         self.spacing = spacing
+        self.origin_p = np.array([0, 0])
         self.buffer = np.empty([height, width], dtype=float)
 
+    def set_origin(self):
+        self.o_wcs = self.origin_p
+        self.o_wcs[0], self.o_wcs[1] = -0.5 * (self.width - 1) * self.spacing, -0.5 * (self.height - 1) * self.spacing
+        return self.o_wcs
+
     def get_origin(self):
-        o_wcs = Grid.o_pixel
-        o_wcs[0], o_wcs[1] = -0.5 * (self.width - 1) * self.spacing, -0.5 * (self.height - 1) * self.spacing
-        return o_wcs
+        return self.o_wcs
 
     def get_size(self):
         size = np.array([self.width, self.height])
@@ -35,8 +39,8 @@ class Grid:
         return np.array([(i * self.spacing) + origin[0], (j * self.spacing) + origin[1]])
 
     def physical_to_index(self, x, y):
-        return np.array([((x - Grid.o_pixel[0]) / self.spacing).astype('int64'),
-                         ((y - Grid.o_pixel[1]) / self.spacing).astype('int64')])
+        return np.array([((x - self.origin_p[0]) / self.spacing).astype('int64'),
+                         ((y - self.origin_p[1]) / self.spacing).astype('int64')])
 
     def set_at_index(self, i, j, val):
         if i >= Grid.get_size(self)[0] or j >= Grid.get_size(self)[1]:
@@ -48,6 +52,5 @@ class Grid:
         return self.buffer[i][j]
 
 
-def get_at_physical(grid, x, y):
-    # not sure if correct implementation
-    return utils.interpolate(grid, x, y)
+    def get_at_physical(self, grid, x, y):
+        return utils.interpolate(grid, x, y)
