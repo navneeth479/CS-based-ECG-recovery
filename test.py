@@ -8,21 +8,22 @@ phantom = utils.shepp_logan(512)
 
 # note: constructor params are -> height, width, (s_x, s_y), (o_x, o_y)
 # spacing and origin are to be set as tuples
-grid_phantom = grid.Grid(len(phantom), len(phantom[0]), (1, 1), (0, 0))
+grid_phantom = grid.Grid(len(phantom), len(phantom[0]), (2, 2))
 grid_phantom.set_buffer(phantom)
 utils.show(grid_phantom.get_buffer(), "Shepp Logan Phantom ")
 
 print("Origin is set at:", grid_phantom.get_origin())
 print("Spacing values are:", grid_phantom.get_spacing())
 print("Grid size is:", grid_phantom.get_size())
-print("get at physical of phantom @",(150, 157),"is :", grid_phantom.get_at_physical(grid_phantom, 150, 157))
+print(" indices of:", (100, 100), "are:", grid_phantom.physical_to_index(100, 100) )
+print("get at physical of phantom", grid_phantom.get_at_physical(100, 100))
 
 # *******  END **********
 
 
 # **** TEST - 2 ****
 # ******* Using grid class methods to draw a circle **********
-grid_test = grid.Grid(512, 512, (1, 1), (-255, -255))
+grid_test = grid.Grid(512, 512, (1, 1))
 origin = grid_test.get_origin()
 
 radius = 100
@@ -38,7 +39,7 @@ for x in range(-radius, radius):
             if 0 <= i < width and 0 <= j < height:
                 grid_test.set_at_index(i, j, val)
 
-utils.show(grid_test.get_buffer(), "test")
+utils.show(grid_test.get_buffer(), "circular phantom")
 
-print("get at physical @",(20, 20),"is :", grid_test.get_at_physical(grid_test, 0, 100))
+print("get at physical @",(20, 20),"is :", grid_test.get_at_physical(20, 20))
 # ******* circle test ended **********
