@@ -8,7 +8,7 @@ pyconrad.start_gui()
 
 def shepp_logan(xy):
     _ = pyconrad.ClassGetter('edu.stanford.rsl.tutorial.phantoms')
-    return _.SheppLogan(xy, False).as_numpy()
+    return _.SheppLogan(xy).as_numpy()
 
 
 def show(numpy_array, name):

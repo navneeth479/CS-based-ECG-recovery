@@ -39,10 +39,7 @@ class Grid:
                          ((y - self.origin[1]) / self.spacing[1])])
 
     def set_at_index(self, i, j, val):
-        if i >= Grid.get_size(self)[0] or j >= Grid.get_size(self)[1]:
-            print("indices are out of range")
-        else:
-            self.buffer[i][j] = val
+        self.buffer[i][j] = val
 
     def get_at_index(self, i, j):
         return self.buffer[i][j]
