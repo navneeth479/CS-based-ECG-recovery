@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f963bc4e-0cb4-46ff-9b03-609f3dbc3d43" name="Changes" comment="">
+    <list default="true" id="f963bc4e-0cb4-46ff-9b03-609f3dbc3d43" name="Changes" comment="Creating sinogram with ray driven approach (minor revisions and code clean up pending)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/Grid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Helpers/Utility_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/Utility_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PB_Recon.py" beforeDir="false" afterPath="$PROJECT_DIR$/PB_Recon.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flat_panel_project_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/flat_panel_project_utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
@@ -26,7 +28,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="28IZD79DDlUkLidBfuDR7WKqVsP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -150,8 +152,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.Utility_functions" />
         <item itemvalue="Python.PB_Recon" />
+        <item itemvalue="Python.Utility_functions" />
         <item itemvalue="Python.SheppLoganShow" />
         <item itemvalue="Python.Grid" />
       </list>
@@ -166,6 +168,14 @@
       <option name="presentableId" value="Default" />
       <updated>1650905939861</updated>
     </task>
+    <task id="LOCAL-00001" summary="Creating sinogram with ray driven approach (minor revisions and code clean up pending)">
+      <created>1653136461695</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1653136461696</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -178,6 +188,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Creating sinogram with ray driven approach (minor revisions and code clean up pending)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating sinogram with ray driven approach (minor revisions and code clean up pending)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -194,13 +208,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/PB_Recon.py</url>
-          <line>7</line>
-          <option name="timeStamp" value="9" />
+          <line>104</line>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/PB_Recon.py</url>
-          <line>23</line>
-          <option name="timeStamp" value="12" />
+          <line>109</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Helpers/Utility_functions.py</url>
+          <line>5</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PB_Recon.py</url>
+          <line>11</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

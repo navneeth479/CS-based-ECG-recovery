@@ -41,6 +41,9 @@ class Grid:
     def set_at_index(self, i, j, val):
         self.buffer[i][j] = val
 
+    def add_at_index(self, i, j, val):
+        self.buffer[i][j] += val
+
     def get_at_index(self, i, j):
         return self.buffer[i][j]
 
