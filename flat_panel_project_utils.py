@@ -10,28 +10,20 @@ def shepp_logan(xy):
     _ = pyconrad.ClassGetter('edu.stanford.rsl.tutorial.phantoms')
     return _.SheppLogan(xy).as_numpy()
 
-def cencentric_circles(xy, disks):
-    x = np.arange(-xy, xy, 1)
-    y = np.arange(-xy, xy, 1)
-    xx, yy = np.meshgrid(x, y, sparse=True)
-    uniform_disk = (xx ** 2 + yy ** 2 < 40000)
 
-    numdisks = disks
-    concentric_disk = np.zeros((512, 512))
-    disk_thickness = 20  # pixels
-    for i in range(numdisks * 2 - 1):
+def ellipsoid(x, y):
+    _ = pyconrad.ClassGetter('edu.stanford.rsl.tutorial.phantoms')
+    return _.Ellipsoid(x, y).as_numpy()
 
-        if i == 0:
-            concentric_disk = (xx ** 2 + yy ** 2 < (disk_thickness * (i + 1)) ** 2)  #
-        elif i % 2 and np.sqrt((disk_thickness * (i + 2)) ** 2) < 256:
-            #         print(np.sqrt((disk_thickness * (i+2))**2))
-            concentric_disk += ((xx ** 2 + yy ** 2 > (disk_thickness * (i + 1)) ** 2)) & (
-                        xx ** 2 + yy ** 2 < (disk_thickness * (i + 2)) ** 2)
 
-    if disks > 1:
-        return concentric_disk
-    else:
-        return uniform_disk
+def circle2D(x, y):
+    _ = pyconrad.ClassGetter('edu.stanford.rsl.tutorial.phantoms')
+    return _.UniformCircleGrid2D(x, y).as_numpy()
+
+
+def dotsgrid2D(x, y):
+    _ = pyconrad.ClassGetter('edu.stanford.rsl.tutorial.phantoms')
+    return _.DotsGrid2D(x, y).as_numpy()
 
 
 def show(numpy_array, name):
