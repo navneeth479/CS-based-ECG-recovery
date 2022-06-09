@@ -100,6 +100,7 @@ def backproject(sinogram, recon_size_x, recon_size_y, spacing):
 
     theta = np.linspace(0, 180, projections, endpoint=False)
 
+    # Using library for to create FBP for comparison
     img_fbp = iradon(sinogram.get_buffer(), theta=theta, output_size=recon_size_x, filter_name=None, circle=False)
 
     for x in range(recon_img.get_size()[0]):
@@ -115,7 +116,7 @@ def backproject(sinogram, recon_size_x, recon_size_y, spacing):
                 s /= deltaS
 
                 if sinogram.get_size()[0] >= s + 1 and s > 0:
-                    val = sinogram.get_at_index(int(s), i)
+                    val = sinogram.get_at_index(int(np.floor(s)), i)
                     recon_img.buffer[x][y] += val
 
     return recon_img.get_buffer(), img_fbp
