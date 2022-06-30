@@ -36,8 +36,6 @@ def ramp_filter(sinogram, detector_spacing):
     fourier_filter = 2 * np.abs(f)
 
     # Optional : plotting the filter kernel in freq domain
-    plt.plot(fourier_filter)
-    plt.show()
 
     # Apply ramp filter in Fourier domain. Filtering row wise (along each detector line)
     sino_filtered = grid.Grid(padded_sino.shape[0], padded_sino.shape[1],
@@ -109,7 +107,7 @@ def backproject(sinogram, recon_size_x, recon_size_y, spacing):
             for i in range(0, len(theta)):  # last loop
                 angle = (theta[i]) * (np.pi / 180)
                 s = w[0] * (recon_img.get_spacing()[0] * np.cos(angle)) + w[1] * (
-                            recon_img.get_spacing()[0] * np.sin(angle))
+                        recon_img.get_spacing()[0] * np.sin(angle))
 
                 # compute detector element index from world coordinates
                 s += detector_length / 2

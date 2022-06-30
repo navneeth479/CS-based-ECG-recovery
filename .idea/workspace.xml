@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f963bc4e-0cb4-46ff-9b03-609f3dbc3d43" name="Changes" comment="PB reconstruction final check in">
-      <change afterPath="$PROJECT_DIR$/FB_Recon.py" afterDir="false" />
+    <list default="true" id="f963bc4e-0cb4-46ff-9b03-609f3dbc3d43" name="Changes" comment="FB reconstruction initial check in">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FB_Recon.py" beforeDir="false" afterPath="$PROJECT_DIR$/FB_Recon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Helpers/Utility_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/Utility_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PB_Recon.py" beforeDir="false" afterPath="$PROJECT_DIR$/PB_Recon.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_Shirin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing_file.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +31,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="28IZD79DDlUkLidBfuDR7WKqVsP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -192,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654768671053</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="FB reconstruction initial check in">
+      <created>1656090374878</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1656090374878</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -211,7 +218,8 @@
     <MESSAGE value="Creating sinogram with ray driven approach (not correct implementation...requires revision)" />
     <MESSAGE value="Parallel Beam Geometry final implementation check in" />
     <MESSAGE value="PB reconstruction final check in" />
-    <option name="LAST_COMMIT_MESSAGE" value="PB reconstruction final check in" />
+    <MESSAGE value="FB reconstruction initial check in" />
+    <option name="LAST_COMMIT_MESSAGE" value="FB reconstruction initial check in" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -227,24 +235,14 @@
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test.py</url>
-          <line>32</line>
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/PB_Recon.py</url>
-          <line>81</line>
+          <line>79</line>
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/FB_Recon.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/FB_Recon.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="77" />
+          <line>74</line>
+          <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

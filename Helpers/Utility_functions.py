@@ -1,4 +1,6 @@
 import numpy as np
+from sympy import Point, Line, Segment
+
 
 def line_integral(phantom, s, theta):
     diag = np.sqrt(np.power(phantom.get_size()[0] * phantom.get_spacing()[0], 2) + np.power(
@@ -16,3 +18,4 @@ def line_integral(phantom, s, theta):
 def next_power_of_two(value):
     value = value - 1
     return int(2 * pow(2, np.ceil(np.log(value) / np.log(2))))
+
