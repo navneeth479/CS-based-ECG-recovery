@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f963bc4e-0cb4-46ff-9b03-609f3dbc3d43" name="Changes" comment="FB reconstruction initial check in">
+    <list default="true" id="f963bc4e-0cb4-46ff-9b03-609f3dbc3d43" name="Changes" comment="FB reconstruction final check in">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FB_Recon.py" beforeDir="false" afterPath="$PROJECT_DIR$/FB_Recon.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Helpers/Utility_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/Utility_functions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PB_Recon.py" beforeDir="false" afterPath="$PROJECT_DIR$/PB_Recon.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing_file.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +34,9 @@
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="28IZD79DDlUkLidBfuDR7WKqVsP" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -46,7 +48,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.testing_file">
     <configuration name="PB_Recon" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FlatPanel CT" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -68,7 +70,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Utility_functions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="openCL" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FlatPanel CT" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -76,11 +78,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Helpers" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Helpers/Utility_functions.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/openCL.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -131,7 +133,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in test_2.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="test_openCL.py" type="tests" factoryName="Autodetect" temporary="true">
       <module name="FlatPanel CT" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -141,17 +143,17 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_2.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_openCL.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.testing_file" />
-        <item itemvalue="Python tests.Python tests in test_2.py" />
+        <item itemvalue="Python.openCL" />
         <item itemvalue="Python.PB_Recon" />
-        <item itemvalue="Python.Utility_functions" />
+        <item itemvalue="Python tests.test_openCL.py" />
+        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -199,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656090374878</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="FB reconstruction final check in">
+      <created>1656603664768</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1656603664768</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -219,7 +228,8 @@
     <MESSAGE value="Parallel Beam Geometry final implementation check in" />
     <MESSAGE value="PB reconstruction final check in" />
     <MESSAGE value="FB reconstruction initial check in" />
-    <option name="LAST_COMMIT_MESSAGE" value="FB reconstruction initial check in" />
+    <MESSAGE value="FB reconstruction final check in" />
+    <option name="LAST_COMMIT_MESSAGE" value="FB reconstruction final check in" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -233,11 +243,6 @@
           <url>file://$USER_HOME$/anaconda3/Lib/site-packages/jpype/_jvmfinder.py</url>
           <line>146</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/PB_Recon.py</url>
-          <line>79</line>
-          <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/FB_Recon.py</url>

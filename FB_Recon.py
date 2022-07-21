@@ -14,8 +14,8 @@ def create_fanogram(phantom, projections, detector_spacing, detector_sizeInPixel
 
     gamma = np.arctan(detector_length / d_sd)
     print("fan angle is: ", np.rad2deg(gamma))
-    beta = np.linspace(0, np.deg2rad(angular_scan_range) + gamma, projections)
-    new_angular_increment = (angular_scan_range + np.rad2deg(gamma)) / projections
+    beta = np.linspace(0, np.deg2rad(angular_scan_range), projections)
+    new_angular_increment = (angular_scan_range) / projections
     d_id = d_sd - d_si
     num_of_Angles = len(beta)
     t = np.linspace(-(detector_length - 1) * detector_spacing / 2, (detector_length - 1) * detector_spacing / 2,

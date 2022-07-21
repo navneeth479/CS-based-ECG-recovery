@@ -1,10 +1,53 @@
+import numpy
 import Grid as grid
 from skimage.transform import iradon
-import flat_panel_project_utils as utils
 import numpy as np
+import pyopencl as cl
 import matplotlib.pyplot as plt
 import Helpers.Utility_functions as helper
 from scipy.fftpack import fft, ifft, fftfreq
+
+
+def backprojectOpenCL(sinogram, recon_size_x, recon_size_y, spacing):
+    recon_img = grid.Grid(recon_size_x, recon_size_y, spacing)  # spacing should be received as a tuple
+    deltaS = sinogram.get_spacing()[1]
+    deltaTheta = sinogram.get_spacing()[0]
+    detector_length, projections = sinogram.get_size()[1], sinogram.get_size()[0]
+    sinogram.set_origin(0, -(detector_length - 1) * deltaS / 2)
+    sino_origin = sinogram.get_origin()
+    spacing = recon_img.get_spacing()
+    origin = recon_img.get_origin()
+
+    # setting up device and queuing kernel call
+    platform = cl.get_platforms()
+    GPU = platform[0].get_devices()
+    ctx = cl.Context(GPU)
+    queue = cl.CommandQueue(ctx)
+    mf = cl.mem_flags
+
+    # build a 2D OpenCL Image from the numpy array, buffers and output image
+    src = numpy.array(sinogram.get_buffer(), dtype=numpy.float32)
+    sino_buffer = cl.image_from_array(ctx, src, num_channels=1, mode="r", norm_int=False)
+
+    # build destination image texture
+    fmt = cl.ImageFormat(cl.channel_order.INTENSITY, cl.channel_type.UNSIGNED_INT8)
+    dest_buf = cl.Image(ctx, mf.WRITE_ONLY, fmt, shape=(recon_size_x, recon_size_y))
+    res_np = numpy.empty_like(recon_img.buffer)
+
+    # Passing scalar params from host to device.
+    kernel = open("backproject.cl").read()
+    prg = cl.Program(ctx, kernel).build()
+    prg.backproject(queue, [recon_size_x, recon_size_y], None, sino_buffer, dest_buf,
+                    np.float32(deltaS), np.float32(deltaTheta), np.float32(sino_origin[0]), np.float32(sino_origin[1]),
+                    np.float32(detector_length), np.float32(projections), np.float32(spacing[0]),
+                    np.float32(spacing[1]),
+                    np.float32(origin[0]), np.float32(spacing[1]))
+
+    cl.enqueue_copy(queue, res_np, dest_buf, origin=(0, 0), region=(recon_size_x, recon_size_y))
+
+    correction_factor = np.pi / (2 * projections)
+    img_recon_corrected = res_np * correction_factor
+    return img_recon_corrected
 
 
 def create_sinogram(phantom, projections, detector_spacing, detector_size, angular_scan_range):
@@ -103,7 +146,7 @@ def backproject(sinogram, recon_size_x, recon_size_y, spacing):
 
     for x in range(recon_img.get_size()[0]):
         for y in range(recon_img.get_size()[1]):
-            w = recon_img.index_to_physical(x, y)  # not needed then
+            w = recon_img.index_to_physical(x, y)
             for i in range(0, len(theta)):  # last loop
                 angle = (theta[i]) * (np.pi / 180)
                 s = w[0] * (recon_img.get_spacing()[0] * np.cos(angle)) + w[1] * (
@@ -117,4 +160,8 @@ def backproject(sinogram, recon_size_x, recon_size_y, spacing):
                     val = sinogram.get_at_index(int(np.floor(s)), i)
                     recon_img.buffer[x][y] += val
 
-    return recon_img.get_buffer(), img_fbp
+    correction_factor = np.pi / (2 * len(theta))
+    img_recon_corrected = recon_img.get_buffer() * correction_factor
+    return img_recon_corrected, img_fbp
+
+
