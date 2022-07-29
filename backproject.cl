@@ -33,6 +33,7 @@ __kernel void backproject(
                 float xcoord =  (x * spacing_x) + o_x;
                 float ycoord =  (y * spacing_y) + o_y;
 
+                float proj_val = 0.0;
                 for (float i = 0.0; i < maxTheta; i+=1.0f)
                 {
                   float theta = (deltaTheta * i);
@@ -42,8 +43,7 @@ __kernel void backproject(
 
                   // Convert detector physical position back to pixel coord
                   float s_p = (s - sino_o_y)/deltaS;
-
-                  float proj_val = read_imagef(sinogram, linearSampler, (float2)(i + 0.5f, s_p + 0.5f)).x;
-                  write_imagef(reco, (int2)(x,y), proj_val);
+                  proj_val += read_imagef(sinogram, linearSampler, (float2)(i + 0.5f, s_p + 0.5f)).x;
                 }
+                write_imagef(reco, (int2)(x,y), proj_val);
              }

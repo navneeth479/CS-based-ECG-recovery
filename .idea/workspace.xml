@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f963bc4e-0cb4-46ff-9b03-609f3dbc3d43" name="Changes" comment="Accelerated GPU version of FBP">
+    <list default="true" id="f963bc4e-0cb4-46ff-9b03-609f3dbc3d43" name="Changes" comment="Calling CONRAD reconstruction pipeline through pyconrad - CB reconstruction">
+      <change afterPath="$PROJECT_DIR$/Ex5Data/EX4 recon images/ Phantom .png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex5Data/EX4 recon images/FBP image .png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex5Data/EX4 recon images/OpenCL recon image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex5Data/EX4 recon images/Sinogram .png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex5Data/EX4 recon images/Sinogram filtered.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyOpenCL_output/ input_Phantom .jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyOpenCL_output/FBP image .jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyOpenCL_output/OpenCL recon image.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyOpenCL_output/Sinogram .jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyOpenCL_output/Sinogram filtered.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backproject.cl" beforeDir="false" afterPath="$PROJECT_DIR$/backproject.cl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testing_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing_file.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +51,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.CB_Recon">
+  <component name="RunManager" selected="Python.testing_file">
     <configuration name="CB_Recon" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FlatPanel CT" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -151,9 +152,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.testing_file" />
         <item itemvalue="Python.CB_Recon" />
         <item itemvalue="Python.openCL" />
-        <item itemvalue="Python.testing_file" />
         <item itemvalue="Python.PB_Recon" />
         <item itemvalue="Python tests.test_openCL.py" />
       </list>
@@ -217,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658447718281</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Calling CONRAD reconstruction pipeline through pyconrad - CB reconstruction">
+      <created>1659094534640</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1659094534640</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -239,7 +247,8 @@
     <MESSAGE value="FB reconstruction initial check in" />
     <MESSAGE value="FB reconstruction final check in" />
     <MESSAGE value="Accelerated GPU version of FBP" />
-    <option name="LAST_COMMIT_MESSAGE" value="Accelerated GPU version of FBP" />
+    <MESSAGE value="Calling CONRAD reconstruction pipeline through pyconrad - CB reconstruction" />
+    <option name="LAST_COMMIT_MESSAGE" value="Calling CONRAD reconstruction pipeline through pyconrad - CB reconstruction" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -263,11 +272,6 @@
           <url>file://$PROJECT_DIR$/openCL.py</url>
           <line>24</line>
           <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/CB_Recon.py</url>
-          <line>3</line>
-          <option name="timeStamp" value="83" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
